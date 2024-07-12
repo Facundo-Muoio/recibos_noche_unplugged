@@ -1,0 +1,108 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+button {
+	background-color: white;
+	color: #242424;
+}
+
+.recibos {
+	width: fit-content;
+	height: fit-content;
+	background-color: white;
+	color: #000;
+	padding: 0.5rem;
+	margin: auto;
+}
+
+.recibo {
+	width: 700px;
+	border: 1px solid #000;
+	padding: 10px;
+	margin: 4px;
+	padding: 8px 24px;
+}
+
+.recibo p {
+	margin: 2px;
+	border-bottom: 1px solid black;
+}
+
+.recibo h4 {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	text-align: center;
+}
+
+.recibo p:nth-child(2) {
+	display: flex;
+	justify-content: end;
+	border-bottom: none;
+}
+
+.recibo p:nth-child(2) b {
+	margin-right: 4px;
+}
+
+.recibo p:nth-child(7) {
+	margin-top: 16px;
+}
+
+.recibo p:nth-child(7),
+.recibo p:nth-child(8),
+.recibo p:last-child {
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 0.8rem;
+	border-bottom: none;
+}
+
+#delete-dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+button {
+	padding: 6px 16px;
+	border: none;
+	border-radius: 16px;
+	outline: none;
+	cursor: pointer;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+form {
+	margin: 2rem;
+	border: 1px solid darkslategrey;
+	padding: 1rem;
+	width: 300px;
+}
+
+form input {
+	width: 95%;
+	margin: 0.33rem auto;
+	padding: 4px;
+	outline: none;
+	font-size: 1.1rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+
+form button {
+	margin-top: 0.5rem;
+}
