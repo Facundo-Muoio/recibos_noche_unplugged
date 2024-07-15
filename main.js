@@ -40,6 +40,7 @@ btnSignOut.addEventListener("click", handleSignoutClick);
 let tokenClient;
 let gapiInited = false;
 let gisInited = false;
+let globalDate;
 let count = 0;
 
 document.getElementById("authorize_button").style.visibility = "hidden";
@@ -145,17 +146,18 @@ async function listMajors() {
 		return;
 	}
 
-	console.log(range.values);
+	// console.log(range.values);
+	globalDate = range.values[0][2];
 	range.values
 		.filter(e => !!e[0] === true && !!e[1] === true && !!e[6] === true)
 		.forEach((recibo, index) => {
-			if (index === 0) return;
+			if (index === 0 || index === 1) return;
 			count++;
 			if (count % 4 === 0) {
 				divsRecibos.innerHTML += `
 			<div class="recibo html2pdf__page-break">
 				<h4>RECIBO DE PAGO</h4>
-				<p><b>Fecha:</b> VIERNES 11/07/2024</p>
+				<p><b>Fecha:</b> ${range.values[0][1]} ${globalDate}</p>
 				<p><b>Nombre:</b> ${recibo[0]}</p>
 				<p><b>Recibi de:</b> DESENCHUFADOS S.R.L</p>
 				<p><b>Monto:</b> $ ${Number(recibo[6])} ${numberToWords(
@@ -173,7 +175,7 @@ async function listMajors() {
 				divsRecibos.innerHTML += `
 				<div class="recibo">
 				<h4>RECIBO DE PAGO</h4>
-				<p><b>Fecha:</b> VIERNES 11/07/2024</p>
+				<p><b>Fecha:</b> ${range.values[0][1]} ${globalDate}</p>
 				<p><b>Nombre:</b> ${recibo[0]}</p>
 				<p><b>Recibi de:</b> DESENCHUFADOS S.R.L</p>
 				<p><b>Monto:</b> $ ${Number(recibo[6])} ${numberToWords(
